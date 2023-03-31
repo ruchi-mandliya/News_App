@@ -4,6 +4,7 @@ import { useWindowDimensions } from 'react-native'
 import { TabView, SceneMap } from 'react-native-tab-view';
 import DiscoverScreen from '../Screens/DiscoverScreen';
 import NewsScreen from '../Screens/NewsScreen';
+import TopNavigation from './TopNavigation';
 
 
 
@@ -30,9 +31,12 @@ const InshortsTab = () => {
       renderScene={renderScene}
       onIndexChange={setIndex}
       initialLayout={{ width: layout.width }}
+      renderTabBar={()=> <TopNavigation 
+        index = {index} 
+        setIndex = {setIndex}/>}
     />
    
-  )
+  );
 }
 
 export default InshortsTab
